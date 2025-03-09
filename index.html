@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+.Vishal{
+   
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav h1 {
+    font-size: 2.5rem;
+    color: #ff004f;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff004f;
+}
+
+nav .fa-bars,
+nav .fa-xmark {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.vishal-image {
+    flex: 1;
+    text-align: center;
+}
+
+.vishal-image img {
+    max-width: 80%;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.header-text {
+    flex: 2;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.header-text h3 {
+    font-size: 2.5rem;
+}
+
+.header-text div {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Mobile view */
+@media only screen and (max-width: 600px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        height: 100vh;
+        width: 200px;
+        padding-top: 50px;
+        z-index: 2;
+    }
+
+    nav ul li {
+        margin: 25px 0;
+    }
+
+    nav .fa-bars {
+        display: block;
+    }
+
+    nav ul .fa-xmark {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
+
+    nav ul.active {
+        display: flex;
+        right: 0;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-text {
+        margin-right: 0;
+        text-align: center;
+    }
+
+}
+
+
+
+
+</style>
+<script src="https://kit.fontawesome.com/dc56e20954.js" crossorigin="anonymous"></script>
+<body>
+    <div id="header" style="margin-top: 20px;">
+        <div class="container">
+            <nav>
+                <!-- <img src="images/logo2.jpg" alt="" class="logo"> -->
+                <h1 style="color: #fff; font-size: 2.5rem;"><span style="color: #ff004f">V</span>ishal.<span style="color: #ff004f">D</span>ev</h1>
+                <ul id="sidemenu">
+                    <i class="fa-solid fa-xmark" style="color: #fff;" onclick="closemenu()"></i>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+    
+            <div class="header-content" style="margin-top: -10px;">
+                <div class="header-text">
+                    <h3 style="font-size: 2.5rem">Hey, I'm <span style="color: #ff004f">Vishal</span></h3>
+                    <div style="font-size: 1.5rem">and I am passionate about to</div>
+                    <span id="element"></span>
+                    <br>
+                    <a href="images/file.pdf"  download class="btn btn2">Download CV</a>
+                </div>
+    
+                <div class="vishal-image" >
+                    <img src="images/image.png " style="height: 400px; width: 800px; margin-top: 60px" alt="Vishal's Picture">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- *********** about ****************** -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/download.jpg" alt="Vishal's Picture">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hi, I'm Vishal. I am working with technology and solving problems. I've got experience as a Backend Developer, Android Developer, and Flutter Developer. I'm always learning new things and I'm excited to use my skills to make a positive impact. Let's team up and create something awesome!</p>
+                    <div class="tab-titles">        
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+    
+                    <!-- Skills content -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Backend Developer:</span> Java ,Spring Boot, Nodejs& Expressjs , MongoDb.</li>
+                            <li><span>Android Developer:</span> Flutter Framework.</li>
+                            <li><span>Version Control System:</span> Git & GitHub.</li>
+                            <li><span>IDEs:</span> Andorid Studio, VS code, Intellij.</li>
+                            <li><span>Other:</span> Sytem Desiner, Team Work, Leadership Quality, Sportsman.</li>
+                        </ul>
+                    </div>
+    
+                    <!-- Education content -->
+                    <div class="tab-contents" id="education">
+                        <ul>                            <li><span>Bachelor's in Computer Science:</span> Maharishi Arvind Institute Of Science And Management. <span>CGPA: </span>8.3/10.</li>
+                            <li><span>High Schooling:</span> Krishnam Senior Secondary Public School. <span>GRADE: </span>A+.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- *********** services ********************** -->
+    <!-- <div id="services">
+
+        <div class="container">
+            <h1 class="sub-title">My Services </h1>
+
+            <div class="services-list"></div>
+
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Sit eveniet distinctio tempore fugit sunt exercitationem esse ipsum dolorem qui explicabo voluptas, 
+                    atque a laborum, neque repellat velit iure, reprehenderit illo?</p>
+              <a href="#" >learn more</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>Ui  Ux</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Sit eveniet distinctio tempore fugit sunt exercitationem esse ipsum dolorem qui explicabo voluptas, 
+                    atque a laborum, neque repellat velit iure, reprehenderit illo?</p>
+              <a href="#" >learn more</a>
+            </div>
+
+
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App Developer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Sit eveniet distinctio tempore fugit sunt exercitationem esse ipsum dolorem qui explicabo voluptas, 
+                    atque a laborum, neque repellat velit iure, reprehenderit illo?</p>
+              <a href="#" >learn more</a>
+            </div>
+
+        </div>
+    </div> -->
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Backend Developer</h2>
+                    <p>I'm passionate about creating strong and efficient back-end systems. With Spring Boot, I ensure the backbone of applications runs smoothly and securely, making the front-end experience seamless for users.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-mobile-alt"></i>
+                    <h2>Android Developer</h2>
+                    <p>Building intuitive and user-friendly Android apps is something I love doing. Using Android Studio, I strive to create apps that not only look good but also perform exceptionally well, making users' lives easier.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cogs"></i>
+                    <h2>System Designer</h2>
+                    <p>Designing efficient systems that meet specific needs is my forte. I enjoy analyzing user requirements and crafting solutions that work perfectly, ensuring everything runs like a well-oiled machine.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- <div id="portfolio">
+
+        <div class="container">
+            <h1 class="sub-title">
+             My Work
+            </h1>
+
+            <div class="work-list">
+
+                <div class="work">
+                    <img src="images/logo2.jpg" alt="">
+                </div>
+                <div class="work">
+                    <img src="images/logo2.jpg" alt="">
+                </div>
+                <div class="work">
+                    <img src="images/logo2.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+    
+    
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/algo.jpg" alt="">
+                <div class="layer">
+                    <h3>Algo Trading App</h3>
+                    <p>Developed an intuitive Algo Trading App that simplifies the trading process by automating trade execution. This project was driven by my passion for finance and technology, aiming to empower users to make informed trading decisions effortlessly.</p>
+                     <a href="https://github.com/vishalgarna/Robo_Frontend.git" target="_blank"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/groceery.png" alt="">
+                <div class="layer">
+                    <h3>Grocerry App</h3>
+
+                    <p>Created a user-friendly Grocery App to make shopping more convenient and efficient. This app allows users to easily browse, select, and purchase groceries from their favorite stores, all from the comfort of their homes. My goal was to enhance the everyday shopping experience.</p>
+                     <a href="https://github.com/vishalgarna/e-commerce-app.git" target="_blank"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/covid.jpg" alt="">
+                <div class="layer">
+                    <h3>Covid Tracker App</h3>
+                    
+                    <p>Designed a Covid Tracker App to provide real-time updates on the pandemic. This app helps users stay informed about the latest statistics, safety guidelines, and vaccination centers. I developed this project to contribute to the community during a challenging time.</p>
+
+                     <a href="https://github.com/vishalgarna/covid19_tracker_app.git" target="_blank"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn"> See more</a>
+    </div>
+</div>
+
+
+
+<!-- cotacts -->
+
+<div id="contact">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="contact-left">
+
+                <h1 class="sub-title"> Contact Me </h1>
+                <p><i class="fa-solid fa-envelope"></i> vishalgarna7@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 7340479570</p>
+                <br>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/vishal-garna-a796592b6" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              
+                </div>
+                
+                <a href="images/file.pdf" download class="btn btn2">Download CV</a>
+            </div>
+
+            <div class="contact-right">
+
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" , required>
+                    <input type="email" name="Email" placeholder="Your email" , required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+
+                <span id="msg"> </span>
+                
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright (c) Vishal. Made with <i class="fa-solid fa-heart"></i>. Thanks for Visting</p>
+    </div>
+</div>
+
+
+
+
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+
+        function opentab(tabname){
+
+            for(tablink of  tablinks){
+                tablink.classList.remove('active-link')
+            }
+            for(tabcontent of  tabcontents){
+                tabcontent.classList.remove('active-tab');
+            }
+
+            event.currentTarget.classList.add("active-link")
+
+            document.getElementById(tabname).classList.add("active-tab")
+
+        }
+        
+
+
+    </script>
+
+<script>
+    function openmenu() {
+        document.getElementById('sidemenu').classList.add('active');
+    }
+
+    function closemenu() {
+        document.getElementById('sidemenu').classList.remove('active');
+    }
+</script>
+
+     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+     <script>
+         var typed = new Typed('#element', {
+           strings: ['Backend Developer,', 'Flutter Developer,', 'Android Developer,', 'System Designer,'],
+           typeSpeed: 50,
+         });
+       </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyqCTwS-qFa_puAyNlCan6NYgsKlCpnnQ_G-1Qn1Se8BO_mEgQMxE-9T2uKIxKaaiyR/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  const msg = document.getElementById("msg")
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {msg.innerHTML = "Message Sent Successfully"
+        setTimeout(function(){
+        msg.innerHTML = " ";
+        },500)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+
+</html>
